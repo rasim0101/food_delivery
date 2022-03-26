@@ -2,7 +2,15 @@
 {% load static %}
 
 {% block content %}
-	<div class="row">
-		<img class="product_picture" src="{{product_photo.url}}">
+	<div class="container">
+		<div class="product_image">
+			<img class="product_picture" src="{{product.product_photo.url}}">
+		</div>
+		<div class="col-6">
+			<div class="product_text">
+				<span class="title">{{product.name}}</span>
+				<span class="price">{{product.price}}</span>
+			</div>
+		</div>		
 	</div>
 {% endblock content %}

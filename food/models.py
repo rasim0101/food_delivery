@@ -1,15 +1,16 @@
 from django.db import models
 
-def product_photo_dir(instance, filename):
-	return 'product_photos/'+instance.id + '/' + filename
+def product_image_upload(instance, filename):
+	return f"food/{instance.id}/{filename}"
 
-def category_photo_dir(instance, filename):
-	return 'category_photos/'+instance.id + '/' + filename
+
+def category_image_upload(instance, filename):
+	return f"food/{instance.id}/{filename}"
 
 
 class Category(models.Model):
 	name = models.CharField(max_length=15)
-	photo = models.ImageField(upload_to='category_photos', default='default.jpg')
+	category_photo = models.ImageField(upload_to='category_image_upload', default='default.jpg')
 
 	def __str__(self):
 		return self.name
@@ -43,7 +44,7 @@ class Product(models.Model):
 	description = models.TextField(verbose_name="Description")
 	category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
 	# category = models.CharField(max_length=10, choices=CATEGORIES, default=BURGERS, verbose_name="Category")
-	product_photo = models.ImageField(upload_to='product_photos', default='default.jpg')
+	product_photo = models.ImageField(upload_to='product_image_upload', default='default.jpg')
 
 	def __str__(self):
 		return self.name

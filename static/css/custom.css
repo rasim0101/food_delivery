@@ -94,3 +94,49 @@ navbar.nav svg {
 .hero .banner-col > span {
 	width: 100%;
 }
+
+.burgers-link {
+	text-align: center;
+}
+
+.a_1 {
+	text-decoration: none;
+	font-size: 60px;
+	color: #ffffff;
+}
+
+.container {
+	width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.col-6 {
+	flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.product_picture {
+	width: 580px;
+}
+
+.title {
+	font-size: 60px;
+	color
+}
+
+.price {
+	font-size: 30px; 
+}
+
+.product_text {
+	padding-left: 39px;
+    margin: -5px 0 0 0;
+    color: #ffffff;
+}
+
+div {
+    display: block;
+}
