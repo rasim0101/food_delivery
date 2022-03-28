@@ -3,9 +3,11 @@
 
 {% block content %}
 	<div class="container">
-		<div class="product_image">
-			<img class="product_picture" src="{{product.product_photo.url}}">
-		</div>
+		<div class="picture-block">
+			<div class="product_image">
+				<img class="product_picture" src="{{product.product_photo.url}}">
+			</div>
+		</div>	
 		<div class="col-6">
 			<div class="product_text">
 				<span class="title">{{product.name}}</span>

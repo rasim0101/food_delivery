@@ -23,5 +23,5 @@ from food import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 	path('', views.index, name='index'),
-	path('product/<id>', views.product, name='product'),
+	path('product/<str:slug>/', views.product, name='product'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
