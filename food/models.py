@@ -12,11 +12,19 @@ def category_image_upload(instance, filename):
 
 
 class Category(models.Model):
-	name = models.CharField(max_length=15)
+	title = models.CharField(max_length=15)
 	category_photo = models.ImageField(upload_to='category_image_upload', default='default.jpg')
+	slug = models.SlugField(null=True)
+
+	def get_absolute_url(self):
+		return reverse('product_list', kwargs={'slug':self.slug})
+
+	def save(self, *args, **kwargs):
+		self.slug=slugify(self.title)
+		return super().save(*args, **kwargs)
 
 	def __str__(self):
-		return self.name
+		return self.title
 
 	class Meta:
 		verbose_name="Категория"

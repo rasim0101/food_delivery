@@ -1,0 +1,12 @@
+{% extends "food/_base.html" %}
+{% load static %}
+
+{% block content %}
+	<div class="row">
+		{% for c in category %}
+			<a style="color:white;" href="{{c.get_absolute_url}}">Кнопка</a>
+		{% endfor %}
+	</div>
+		
+		
+{% endblock content %}

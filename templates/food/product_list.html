@@ -1,8 +1,10 @@
 {% extends "food/_base.html" %}
 {% load static %}
 
-{% block content %}
-	<div class="link-link" style="text-align: center; width:100px;">
-		<a style="color:white;" href="{{ product.get_object_or_404 }}">Кнопка</a>
+{% block content %}	
+	<div class="link-link" style="text-align: center;">
+		{% for p in product %}
+			<a style="color:white;" href="{{p.get_absolute_url}}">Кнопка</a>
+		{% endfor %}
 	</div>	
 {% endblock content %}
