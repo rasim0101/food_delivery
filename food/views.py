@@ -4,6 +4,14 @@ from .models import Product, Category
 def index(request):
 	return render(request, 'food/index.html')
 
+def product_list(request):
+	product_list = Product.objects.all()
+	context = {
+		'product_list': product_list
+	}
+	return render(request, 'food/product_list.html', context)
+
+	
 def product(request, slug):
 	product = get_object_or_404(Product, slug=slug)
 	context = {
