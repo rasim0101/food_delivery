@@ -12,7 +12,19 @@
 			<div class="product_text">
 				<p class="title">{{product.name}}</p>
 				<p class="price" style="margin-top: 0;">${{product.price}}</p>
-				<p class="description" style="font-family: 'Roboto', sans-serif; padding-top: 50px;" >{{product.description}}</p>
+				<div class="buttons-product">
+					<div class="buttons-block">
+						<div class="counter-product">
+							<span class="minus-btn"></span>
+							<input type="text" name="quantity" value="1" size="5">
+							<span class="plus-btn"></span>
+						</div>
+						<div class="add-to-cart">
+							<button class="add-to-cart-btn">ADD TO CARD</button>
+						</div>
+					</div>
+				</div>
+				<p class="description" style="font-family: 'Roboto', sans-serif; padding-top: 50px;" >{{product.description|safe}}</p>
 			</div>
 		</div>		
 	</div>

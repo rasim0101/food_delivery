@@ -3,8 +3,8 @@
 
 {% block content %}
 	<div class="row">
-		{% for c in category %}
-			<a style="color:white;" href="{% url 'product_list' c.id %}">Кнопка</a>
+		{% for c in categories %}
+			<a style="color:white;" href="{% url 'product_list' c.id %}">{{c.title}}</a>
 		{% endfor %}
 	</div>
 		

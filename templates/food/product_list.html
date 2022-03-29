@@ -2,9 +2,9 @@
 {% load static %}
 
 {% block content %}	
-	<div class="link-link" style="text-align: center;">
+	<div class="row">
 		{% for p in product_list %}
-			<a style="color:white;" href="{% url 'product' p.id %}">Кнопка</a>
+			<a style="color:white;" href="{% url 'product' category_id p.id %}">{{p.name}}</a>
 		{% endfor %}
 	</div>	
 {% endblock content %}
