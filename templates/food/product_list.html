@@ -3,8 +3,8 @@
 
 {% block content %}	
 	<div class="link-link" style="text-align: center;">
-		{% for p in product %}
-			<a style="color:white;" href="{{p.get_absolute_url}}">Кнопка</a>
+		{% for p in product_list %}
+			<a style="color:white;" href="{% url 'product' p.id %}">Кнопка</a>
 		{% endfor %}
 	</div>	
 {% endblock content %}

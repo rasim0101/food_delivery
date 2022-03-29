@@ -12,16 +12,16 @@ def category(request):
 	return render(request, 'food/category.html', context)
 
 
-def product_list(request, slug):
-	product_list = get_object_or_404(Category, slug=slug)
+def product_list(request, id):
+	product_list = Product.objects.all()
 	context = {
 		'product_list': product_list
 	}
 	return render(request, 'food/product_list.html', context)
 
 
-def product(request, slug):
-	product = get_object_or_404(Product, slug=slug)
+def product(request, id):
+	product = get_object_or_404(Product, id=id)
 	context = {
 		'product': product
 	}
