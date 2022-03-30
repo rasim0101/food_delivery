@@ -5,6 +5,7 @@ def index(request):
 	collection = Category.objects.all().select_related('product')
 	context = {
 		'collection': collection,
+		'product': product
 	}
 	return render(request, 'food/index.html', context)
 
