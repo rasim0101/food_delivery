@@ -24,6 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 	path('', views.index, name='index'),
     path('categories', views.categories, name="categories"),
-    path('categories/<category_id>/', views.product_list, name="product_list"),
-	path('categories/<category_id>/<product_id>/', views.product, name='product'),
+    path('categories/<category_slug>/', views.product_list, name="product_list"),
+	path('categories/<category_slug>/<product_slug>/', views.product, name='product'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

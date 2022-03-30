@@ -2,7 +2,11 @@ from django.shortcuts import render, get_object_or_404
 from .models import Product, Category
 
 def index(request):
-	return render(request, 'food/index.html')
+	collection = Category.objects.all().select_related('product')
+	context = {
+		'collection': collection,
+	}
+	return render(request, 'food/index.html', context)
 
 def categories(request):
 	categories = Category.objects.all()
@@ -12,19 +16,20 @@ def categories(request):
 	return render(request, 'food/categories.html', context)
 
 
-def product_list(request, category_id):
-	product_list = Product.objects.filter(category=category_id)
+def product_list(request, category_slug):
+	product_list = Product.objects.all()
 	context = {
 		'product_list': product_list,
-		'category_id': category_id
+		'category_slug': category_slug
 	}
 	return render(request, 'food/product_list.html', context)
 
 
-def product(request, category_id, product_id):
-	product = get_object_or_404(Product, id=product_id)
+def product(request, category_slug, product_slug):
+	product = get_object_or_404(Product, slug=product_slug)
 	context = {
-		'product': product
+		'product': product,
+
 	}
 	return render(request, 'food/product.html', context)
 	

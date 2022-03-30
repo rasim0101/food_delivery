@@ -14,14 +14,14 @@ def category_image_upload(instance, filename):
 class Category(models.Model):
 	title = models.CharField(max_length=15)
 	category_photo = models.ImageField(upload_to='category_image_upload', default='default.jpg')
-	# slug = models.SlugField(null=True)
+	slug = models.SlugField(null=True)
 
-	# def get_absolute_url(self):
-	# 	return reverse('product_list', kwargs={'slug':self.slug})
+	def get_absolute_url(self):
+		return reverse('product_list', kwargs={'slug':self.slug})
 
-	# def save(self, *args, **kwargs):
-	# 	self.slug=slugify(self.title)
-	# 	return super().save(*args, **kwargs)
+	def save(self, *args, **kwargs):
+		self.slug=slugify(self.title)
+		return super().save(*args, **kwargs)
 
 	def __str__(self):
 		return self.title
@@ -39,15 +39,15 @@ class Product(models.Model):
 	description = models.TextField(verbose_name="Description")
 	category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
 	product_photo = models.ImageField(upload_to='product_image_upload', default='default.jpg')
-	# slug = models.SlugField(null=True)
+	slug = models.SlugField(null=True)
 
 
-	# def get_absolute_url(self):
-	# 	return reverse('product', kwargs={'slug':self.slug})
+	def get_absolute_url(self):
+		return reverse('product', kwargs={'slug':self.slug})
 
-	# def save(self, *args, **kwargs):
-	# 	self.slug=slugify(self.name)
-	# 	return super().save(*args, **kwargs)
+	def save(self, *args, **kwargs):
+		self.slug=slugify(self.name)
+		return super().save(*args, **kwargs)
 
 	def __str__(self):
 		return self.name

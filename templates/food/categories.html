@@ -4,7 +4,7 @@
 {% block content %}
 	<div class="row">
 		{% for c in categories %}
-			<a style="color:white;" href="{% url 'product_list' c.id %}">{{c.title}}</a>
+			<a style="color:white;" href="{% url 'product_list' c.slug %}">{{c.title}}</a>
 		{% endfor %}
 	</div>
 		
