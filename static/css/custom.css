@@ -281,3 +281,65 @@ p.descripton {
 	font-size: 60px;
 	color: #ffffff;
 }
+
+.swiper-slide img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-name-swiper {
+	text-align: center;
+	position: absolute;
+	color: #fabf00;
+	font-size: 26px;
+	line-height: 36px;
+}
+
+.product-price-swiper {
+	text-align: center;
+	position: absolute;
+	padding-top: 60px;
+	color: #ffffff;
+	font-size: 26px;
+	line-height: 36px;
+}
+
+.product-name-swiper a {
+	text-decoration: none;
+	color: #fabf00;
+}
+
+.product-name-swiper a:hover {
+	color: #ffffff;
+}
+
+.add-to-cart-swiper {
+	position: absolute;
+	padding-top: 180px;
+}
+
+.add-to-cart-btn-swiper {
+	width: 100%;
+	height: 50px;
+	font-size: 19px;
+	letter-spacing: 0;
+	padding: 6px 40px 8px;
+	background: #fabf00;
+	font-family: 'Luckiest Guy', sans-serif;
+	border: none;
+	color: #191919;
+	line-height: 1.0;
+	font-weight: 400;
+	outline: none;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	-ms-transition: all 0.2s linear;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+}

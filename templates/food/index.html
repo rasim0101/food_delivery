@@ -30,18 +30,34 @@
 	<!-- Swiper -->
 	    <div class="swiper mySwiper">
 	      <div class="swiper-wrapper">
+			{% for category in categories %}
 	        <div class="swiper-slide">
-				{% for c in category %}
-	        		<img src="{{c.product.product_photo.url}}" alt="">
+					{% for product in category.product_set.all %}
+	        			<img src="{{product.product_photo.url}}" alt="">
+	        			<span class="product-name-swiper"><a href="#">{{product.name}}</span></a>
+	        			<span class="product-price-swiper">${{product.price}}</span>
+	        			<div class="add-to-cart-swiper">
+	        				<button class="add-to-cart-btn-swiper">ADD TO CARD</button>
+	        			</div>
+					{% endfor %}
+	        </div>
+	        <div class="swiper-slide">
+					{% for product in category.product_set.all %}
+	        			<img src="{{product.product_photo.url}}" alt="">
+	        			<span class="product-name-swiper"><a href="#">{{product.name}}</span></a>
+	        			<span class="product-price-swiper">${{product.price}}</span>
+	        			<div class="add-to-cart-swiper">
+	        				<button class="add-to-cart-btn-swiper">ADD TO CARD</button>
+	        			</div>
 				{% endfor %}
 	        </div>
-	        <div class="swiper-slide">Slide 2</div>
 	        <div class="swiper-slide">Slide 3</div>
 	        <div class="swiper-slide">Slide 4</div>
 	        <div class="swiper-slide">Slide 5</div>
 	        <div class="swiper-slide">Slide 6</div>
 	        <div class="swiper-slide">Slide 7</div>
 	        <div class="swiper-slide">Slide 8</div>
+			{% endfor %}
 	      </div>
 	      <div class="swiper-button-next"></div>
 	      <div class="swiper-button-prev"></div>
@@ -93,8 +109,6 @@
 	        },
 	      });
 	    </script>
-
-	
 
 	<!-- categories with cards -->
 

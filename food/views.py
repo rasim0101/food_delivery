@@ -2,9 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from .models import Product, Category
 
 def index(request):
-	collection = Category.objects.all().select_related('product')
+	categories = Category.objects.prefetch_related('product_set').all()
 	context = {
-		'collection': collection,
+		'categories': categories,
 		'product': product
 	}
 	return render(request, 'food/index.html', context)
