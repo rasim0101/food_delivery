@@ -2,11 +2,16 @@
 {% load static %}
 
 {% block content %}
-	<div class="row">
-		{% for c in categories %}
-			<a style="color:white;" href="{% url 'product_list' c.slug %}">{{c.title}}</a>
+	
+	<div class="gallery">
+		{% for category in categories %}
+			<div class="gallery__card">
+				<a href="{{ category.get_absolute_url }}">
+					<img class="gallery__card__picture" src="{{ category.category_photo.url }}" alt="">
+					<h1>{{ category.title }}</h1>					
+				</a>
+			</div>
 		{% endfor %}
 	</div>
-		
-		
+
 {% endblock content %}

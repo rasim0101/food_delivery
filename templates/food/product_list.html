@@ -1,10 +1,25 @@
-{% extends "food/_base.html" %}
-{% load static %}
+{% extends 'food/_base.html' %}
 
-{% block content %}	
-	<div class="row">
-		{% for p in product_list %}
-			<a style="color:white;" href="{% url 'product' category_slug p.slug %}">{{p.name}}</a>
+
+{% block content %}
+	
+
+	
+	<div class="gallery-grid">
+		<h1>{{ category.name }}</h1>
+		{% for product in products %}
+			<div class="grid-item">
+				<div class="grid-item__inner">
+					<img src="{{ product.product_photo.url }}" alt="">
+					<a href="{{ product.get_absolute_url }}">
+						<div class="grid-item__content">
+							<h2 style="color: #fabf00; font-size: 40px;">{{ product.name }}</h2>
+							<h2 style="color: #ffffff; font-size: 40px;">${{ product.price }}</h2>
+						</div>
+					</a>
+				</div>
+			</div>
 		{% endfor %}
-	</div>	
+	</div>
+
 {% endblock content %}

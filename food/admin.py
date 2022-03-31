@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import *
 from slugify import slugify
 
+
 class CategoryAdmin(admin.ModelAdmin):
 	list_display = ['title']
 	prepopulated_fields = { 'slug': ['title'],}

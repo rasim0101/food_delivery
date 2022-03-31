@@ -23,7 +23,7 @@ from food import views
 urlpatterns = [
     path('admin/', admin.site.urls),
 	path('', views.index, name='index'),
-    path('categories', views.categories, name="categories"),
-    path('categories/<category_slug>/', views.product_list, name="product_list"),
-	path('categories/<category_slug>/<product_slug>/', views.product, name='product'),
+    path('collections', views.categories, name="categories"),
+    path('collections/<slug:slug>/', views.product_list, name="product_list"),
+	path('collections/<slug:category_slug>/<slug:product_slug>/', views.product, name='product'),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
